@@ -2,7 +2,7 @@
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-docker run --gpus=all -ti \
+docker run --gpus=all -ti --rm \
     -v /etc/passwd:/etc/passwd:ro \
     -v /etc/group:/etc/group:ro \
     -v $HOME:$HOME \
